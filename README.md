@@ -21,6 +21,7 @@ The order-embeddings experiments make use of the respository from Ivan Vendrov e
 
 * Clone the above repository
 * Add the *lngru* and *param_init_lngru* functions to layers.py in the order-embeddings repo
+* Add 'lngru': ('param_init_lngru', 'lngru_layer'), to layers
 * In driver.py, replace 'encoder': 'gru' with 'encoder': 'lngru'
 * Follow the instructons on the main page to train a model
 
@@ -36,6 +37,7 @@ The skip-thoughts experiments make use of the repository from Jamie Ryan Kiros e
 
 * Clone the above repository
 * Add the *lngru* and *param_init_lngru* functions to layers.py in training/layers.py in the skip-thoughts repo
+* Add 'lngru': ('param_init_lngru', 'lngru_layer'), to layers
 * In training/train.py, replace encoder='gru' with encoder='lngru' and replace decoder='gru' with decoder='lngru'
 * Follow the instructions in the training directory to train a model
 
@@ -51,6 +53,7 @@ The attentive reader experiment makes use of the repository from Tim Cooijmans e
 
 * Clone the above repository and obtain the data (more details to follow)
 * Add the *lnlstm* and *param_init_lnlstm* functions to layers.py in codes/att_reader/layers.py
+* Add 'lnlstm': ('param_init_lnlstm', 'lnlstm_layer'), to layers
 * Follow the instructions for training a new model and replace the argument --unit_type lstm with --unit_type lnlstm
 
 Below are the log files from the model trained using layer normalization:
