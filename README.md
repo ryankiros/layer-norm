@@ -15,6 +15,8 @@ Available is a file layers.py which contain functions for layer normalization (L
 
 Below we describe how to integrate these functions into existing Github respositories that will allow you to perform the same experients as in the paper. We also make available the trained models that we used to compute curves and numbers in the paper.
 
+NOTE: it is highly encouraged to use CNMeM when using layer norm. Just add cnmem = 1 to your Theano flags.
+
 ## Order-embeddings
 
 The order-embeddings experiments make use of the respository from Ivan Vendrov et al available [here](https://github.com/ivendrov/order-embedding). To train order-embeddings with layer normalization:
