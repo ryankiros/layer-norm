@@ -59,7 +59,11 @@ Once downloaded, follow Step 4 in the training directory to load the model. This
 
 The attentive reader experiment makes use of the repository from Tim Cooijmans et al [here](https://github.com/cooijmanstim/Attentive_reader/tree/bn). To train an attentive reader model:
 
-* Clone the above repository and obtain the data (more details to follow)
+Clone the above repository and obtain the data:
+
+    wget http://www.cs.toronto.edu/~rkiros/top4.zip
+    
+* In codes/att_reader/pkl_data_iterator.py set vdir to be the directory you unzipped the data
 * Add the layer norm function to layers.py in codes/att_reader/layers.py
 * Add the *lnlstm_layer* and *param_init_lnlstm* functions to layers.py in codes/att_reader/layers.py
 * Add 'lnlstm': ('param_init_lnlstm', 'lnlstm_layer'), to layers
