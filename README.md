@@ -63,10 +63,14 @@ The attentive reader experiment makes use of the repository from Tim Cooijmans e
 * Add the layer norm function to layers.py in codes/att_reader/layers.py
 * Add the *lnlstm_layer* and *param_init_lnlstm* functions to layers.py in codes/att_reader/layers.py
 * Add 'lnlstm': ('param_init_lnlstm', 'lnlstm_layer'), to layers
-* Follow the instructions for training a new model and replace the argument --unit_type lstm with --unit_type lnlstm
+* Follow the instructions for training a new model
 
 Below are the log files from the model trained using layer normalization:
 
     wget http://www.cs.toronto.edu/~rkiros/stats_dimworda_[240]_datamode_top4_usedqsim_1_useelug_0_validFre_1000_clip-c_[10.0]_usebidir_0_encoderq_lnlstm_dimproj_[240]_use-drop_[True]_optimize_adam_lstm_s1.npz.pkl
 
 These can be used to reproduce the layer norm curve from the paper.
+
+Here is the command I used for training. See train_baseline.sh for context. Some of the settings in the repository have changed since our experiment:
+
+    THEANO_FLAGS=device=gpu0,lib.cnmem=0.85 python -u -O ${SDIR}/train_attentive_reader.py --use_dq_sims 1 --use_desc_skip_c_g 0 --dim 240 --learn_h0 1 --lr 8e-5 --truncate -1 --model "lstm_s1.npz" --batch_size 64 --optimizer "adam" --validFreq 1000 --model_dir $MDIR --use_desc_skip_c_g 1  --unit_type lnlstm
