@@ -29,7 +29,8 @@ The order-embeddings experiments make use of the respository from Ivan Vendrov e
 
 Available below is a download to the model used to report results in the paper:
 
-    wget http://add-model-here
+    wget http://www.cs.toronto.edu/~rkiros/lngru_order_add0.npz
+    wget http://www.cs.toronto.edu/~rkiros/lngru_order_add0.pkl
 
 Once downloaded, follow the instructions on the main page for evaluating models. This will allow you to reproduce the numbers reported in the table for order-embeddings+LN.
 
