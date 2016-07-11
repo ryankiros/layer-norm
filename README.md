@@ -15,6 +15,8 @@ Available is a file layers.py which contain functions for layer normalization (L
 
 Below we describe how to integrate these functions into existing Github respositories that will allow you to perform the same experients as in the paper. We also make available the trained models that we used to compute curves and numbers in the paper.
 
+Ideally in the future these will be made as PRs to the corresponding repositories.
+
 NOTE: it is highly encouraged to use CNMeM when using layer norm. Just add cnmem = 1 to your Theano flags.
 
 ## Order-embeddings
@@ -22,6 +24,7 @@ NOTE: it is highly encouraged to use CNMeM when using layer norm. Just add cnmem
 The order-embeddings experiments make use of the respository from Ivan Vendrov et al available [here](https://github.com/ivendrov/order-embedding). To train order-embeddings with layer normalization:
 
 * Clone the above repository
+* Add the layer norm function to layers.py in the order-embeddings repo
 * Add the *lngru_layer* and *param_init_lngru* functions to layers.py in the order-embeddings repo
 * Add 'lngru': ('param_init_lngru', 'lngru_layer'), to layers
 * In driver.py, replace 'encoder': 'gru' with 'encoder': 'lngru'
@@ -39,6 +42,7 @@ Once downloaded, follow the instructions on the main page for evaluating models.
 The skip-thoughts experiments make use of the repository from Jamie Ryan Kiros et al available [here](https://github.com/ryankiros/skip-thoughts). To train skip-thoughts with layer normalization:
 
 * Clone the above repository
+* Add the layer norm function to training/layers.py in the skip-thoughts repo
 * Add the *lngru_layer* and *param_init_lngru* functions to layers.py in training/layers.py in the skip-thoughts repo
 * Add 'lngru': ('param_init_lngru', 'lngru_layer'), to layers
 * In training/train.py, replace encoder='gru' with encoder='lngru' and replace decoder='gru' with decoder='lngru'
@@ -55,6 +59,7 @@ Once downloaded, follow Step 4 in the training directory to load the model. This
 The attentive reader experiment makes use of the repository from Tim Cooijmans et al [here](https://github.com/cooijmanstim/Attentive_reader/tree/bn). To train an attentive reader model:
 
 * Clone the above repository and obtain the data (more details to follow)
+* Add the layer norm function to layers.py in codes/att_reader/layers.py
 * Add the *lnlstm_layer* and *param_init_lnlstm* functions to layers.py in codes/att_reader/layers.py
 * Add 'lnlstm': ('param_init_lnlstm', 'lnlstm_layer'), to layers
 * Follow the instructions for training a new model and replace the argument --unit_type lstm with --unit_type lnlstm
