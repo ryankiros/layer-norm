@@ -67,6 +67,6 @@ The attentive reader experiment makes use of the repository from Tim Cooijmans e
 
 Below are the log files from the model trained using layer normalization:
 
-    wget http://add-model-here
+    wget http://www.cs.toronto.edu/~rkiros/stats_dimworda_[240]_datamode_top4_usedqsim_1_useelug_0_validFre_1000_clip-c_[10.0]_usebidir_0_encoderq_lnlstm_dimproj_[240]_use-drop_[True]_optimize_adam_lstm_s1.npz.pkl
 
 These can be used to reproduce the layer norm curve from the paper.
