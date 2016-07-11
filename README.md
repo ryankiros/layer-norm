@@ -50,7 +50,8 @@ The skip-thoughts experiments make use of the repository from Jamie Ryan Kiros e
 
 Below is the skip-thoughts model trained for 1 month using layer normalization:
 
-    wget http://add-model-here
+    wget http://www.cs.toronto.edu/~rkiros/lngru_may13_1700000.npz
+    wget http://www.cs.toronto.edu/~rkiros/lngru_may13_1700000.npz.pkl
 
 Once downloaded, follow Step 4 in the training directory to load the model. This model will allow you to reproduce the reported results in the last row of the table. Step 5 describes how to use the model to encode new sentences into vectors.
 
