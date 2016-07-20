@@ -9,6 +9,8 @@ To use the code you will need:
 * Theano
 * A recent version of [NumPy](http://www.numpy.org/) and [SciPy](http://www.scipy.org/)
 
+Along with the Theano version described below, we also include a torch implementation in the torch_modules directory.
+
 ## Setup
 
 Available is a file layers.py which contain functions for layer normalization (LN) and 4 RNN layers: GRU, LSTM, GRU+LN and LSTM+LN. The GRU and LSTM functions are added to show what differs from the functions that use LN.
