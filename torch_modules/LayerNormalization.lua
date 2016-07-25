@@ -9,7 +9,7 @@ function nn.LayerNormalization(nOutput, bias, eps, affine)
    local mean_rep = nn.Replicate(nOutput,2)(mean) 
 
    local input_center = nn.CSubTable()({input, mean_rep})
-   local std = nn.Mean(2)(nn.Square()(input_center))
+   local std = nn.Sqrt()(nn.Mean(2)(nn.Square()(input_center)))
    local std_rep = nn.AddConstant(eps)(nn.Replicate(nOutput,2)(std))
    local output = nn.CDivTable()({input_center, std_rep})
 
